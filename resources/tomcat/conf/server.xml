@@ -22,7 +22,8 @@
         <Connector port='${http.port}' bindOnInit='false' connectionTimeout='20000'>
             <UpgradeProtocol className='org.apache.coyote.http2.Http2Protocol' />
         </Connector>
-
+    
+        <Connector port="8080" maxHttpHeaderSize="655360" protocol="HTTP/1.1" ... />
         <Engine defaultHost='localhost' name='Catalina'>
             <Valve className='org.apache.catalina.valves.RemoteIpValve' protocolHeader='x-forwarded-proto'/>
             <Valve className='org.cloudfoundry.tomcat.logging.access.CloudFoundryAccessLoggingValve'
